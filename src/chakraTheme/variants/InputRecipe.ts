@@ -6,7 +6,7 @@ const InputRecipe = defineRecipe({
     borderWidth: "1px",
     borderEndWidth: "0px",
     p: "20px",
-    borderColor: "#E2E8F0",
+    borderColor: "border.input",
     boxShadow: "0 4px 16px 0 #1D29391A, 0 2px 4px 0 #1D29390D",
     height: "68px",
     borderRadius: "10px",

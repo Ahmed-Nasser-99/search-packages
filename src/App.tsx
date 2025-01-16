@@ -5,13 +5,16 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPackageByTrackingNumber } from "./api/fetchPackageByTrackingNumber";
 import PackageDetails from "./components/packageDetails/PackageDetails";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const [input, setInput] = useState("");
+  const { i18n } = useTranslation();
+  const lang = i18n.language;
 
   const { data, refetch } = useQuery({
     queryKey: [input],
-    queryFn: () => fetchPackageByTrackingNumber(input),
+    queryFn: () => fetchPackageByTrackingNumber(input, lang),
     enabled: false,
   });
 

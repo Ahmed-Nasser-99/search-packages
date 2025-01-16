@@ -1,7 +1,7 @@
-import { HStack, VStack, Image, Text } from "@chakra-ui/react";
+import { HStack, VStack, Image } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import SearchIcon from "@/assets/icons/SearchIcon";
-import { IconButton, Input } from "@/chakraTheme/chakraTheme";
+import { IconButton, Input, Text } from "@/chakraTheme/chakraTheme";
 
 interface SearchPackageProps {
   input: string;
@@ -23,10 +23,10 @@ const SearchPackage = ({ input, setInput, refetch }: SearchPackageProps) => {
         <VStack gap={0}>
           <Image src="/Pin.png" alt="Pin" objectFit="fill" w="1/3" />
           <Text
-            fontSize="2xl"
+            LSDisplayXl
             fontWeight="bold"
             textAlign="center"
-            color="gray.700"
+            color="text.gray.dark"
           >
             {t("track_your_order")}
           </Text>

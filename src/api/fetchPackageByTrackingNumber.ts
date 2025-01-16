@@ -1,6 +1,9 @@
-export const fetchPackageByTrackingNumber = async (trackingNumber: string) => {
+export const fetchPackageByTrackingNumber = async (
+  trackingNumber: string,
+  lang: string
+) => {
   const response = await fetch(
-    `https://tracking.bosta.co/shipments/track/${trackingNumber}`,
+    `https://tracking.bosta.co/shipments/track/${trackingNumber}?lang=${lang}`,
     {
       headers: {
         "x-requested-by": "Bosta",
