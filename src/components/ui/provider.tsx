@@ -1,15 +1,16 @@
-"use client"
+import { ChakraProvider } from "@chakra-ui/react";
+import { ColorModeProvider } from "./color-mode";
+import { ThemeProviderProps } from "next-themes";
+import { lightSystem } from "@/chakraTheme/chakraTheme";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react"
-import {
-  ColorModeProvider,
-  type ColorModeProviderProps,
-} from "./color-mode"
-
-export function Provider(props: ColorModeProviderProps) {
+export function Provider(props: ThemeProviderProps) {
+  const queryClient = new QueryClient();
   return (
-    <ChakraProvider value={defaultSystem}>
-      <ColorModeProvider {...props} />
-    </ChakraProvider>
-  )
+    <ColorModeProvider {...props}>
+      <QueryClientProvider client={queryClient}>
+        <ChakraProvider value={lightSystem}>{props.children}</ChakraProvider>
+      </QueryClientProvider>
+    </ColorModeProvider>
+  );
 }
