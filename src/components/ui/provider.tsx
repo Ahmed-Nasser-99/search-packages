@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 export function Provider(props: ThemeProviderProps) {
   const queryClient = new QueryClient();
   return (
-    <ColorModeProvider {...props}>
+    <ColorModeProvider {...props} forcedTheme="light">
       <QueryClientProvider client={queryClient}>
         <ChakraProvider value={theme}>{props.children}</ChakraProvider>
       </QueryClientProvider>
