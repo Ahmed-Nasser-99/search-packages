@@ -11,7 +11,8 @@ interface PackageTimeLineProps {
 }
 
 const PackageTimeLine = ({ shipmentDetails }: PackageTimeLineProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const locale = i18n.dir();
 
   const steps = [
     {
@@ -38,9 +39,10 @@ const PackageTimeLine = ({ shipmentDetails }: PackageTimeLineProps) => {
         step={getStep(shipmentDetails.CurrentStatus.code)}
         size="sm"
         orientation={{ base: "vertical", md: "horizontal" }}
+        dir={locale}
       >
         <StepsList
-          alignItems="start !important"
+          alignItems={locale === "rtl" ? "end !important" : "start !important"}
           gap={{ base: "24px", md: "0" }}
         >
           {steps.map((step, index) => (

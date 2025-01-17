@@ -1,5 +1,6 @@
 import { Steps as ChakraSteps, VStack } from "@chakra-ui/react";
 import * as React from "react";
+import { useTranslation } from "react-i18next";
 import { LuCheck } from "react-icons/lu";
 
 interface StepInfoProps {
@@ -14,6 +15,8 @@ export interface StepsItemProps
 export const StepsItem = React.forwardRef<HTMLDivElement, StepsItemProps>(
   function StepsItem(props, ref) {
     const { title, description, ...rest } = props;
+    const { i18n } = useTranslation();
+    const dir = i18n.dir();
     return (
       <ChakraSteps.Item
         {...rest}
@@ -21,6 +24,7 @@ export const StepsItem = React.forwardRef<HTMLDivElement, StepsItemProps>(
         flex="1 0 0 !important"
         flexDirection={{ base: "row", md: "column" }}
         gap="16px"
+        dir={dir}
       >
         <ChakraSteps.Indicator
           _complete={{ bg: "text.teal", color: "white" }}

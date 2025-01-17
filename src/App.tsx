@@ -30,7 +30,12 @@ function App() {
 
   return (
     <Stack w="full" alignItems="center">
-      <Stack w="full" alignItems="center" bg="teal.bg" mb="10">
+      <Stack
+        w="full"
+        alignItems="center"
+        bg="teal.bg"
+        mb={{ base: "4", md: "10" }}
+      >
         <Stack w={["100%", "100%", "70%"]} gap="24px">
           <NavBar input={input} setInput={setInput} refetch={refetch} />
           <SearchPackage input={input} setInput={setInput} refetch={refetch} />
