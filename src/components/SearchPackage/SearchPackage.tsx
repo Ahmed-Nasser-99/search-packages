@@ -31,7 +31,7 @@ const SearchPackage = ({ input, setInput, refetch }: SearchPackageProps) => {
             {t("track_your_order")}
           </Text>
         </VStack>
-        <form onSubmit={handleSubmit} style={{ width: "40%" }}>
+        <form onSubmit={handleSubmit} style={{ width: "60%" }}>
           <HStack gap={0} h="full" transform="translateY(30%)">
             <Input
               borderEndRadius={0}

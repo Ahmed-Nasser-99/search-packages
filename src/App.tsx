@@ -1,7 +1,7 @@
 import { Stack } from "@chakra-ui/react";
 import { NavBar } from "./components/NavBar";
 import SearchPackage from "./components/SearchPackage/SearchPackage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPackageByTrackingNumber } from "./api/fetchPackageByTrackingNumber";
 import PackageDetails from "./components/packageDetails/PackageDetails";
@@ -17,6 +17,10 @@ function App() {
     queryFn: () => fetchPackageByTrackingNumber(input, lang),
     enabled: false,
   });
+
+  useEffect(() => {
+    refetch();
+  }, [lang]);
 
   return (
     <Stack w="full" alignItems="center">

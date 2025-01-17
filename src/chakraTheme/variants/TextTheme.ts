@@ -15,7 +15,7 @@ export const textTheme = defineRecipe({
         lineHeight: "32px",
       },
     },
-    LSSDisplaySm: {
+    LSDisplaySm: {
       true: {
         fontSize: "20px",
         lineHeight: "28px",

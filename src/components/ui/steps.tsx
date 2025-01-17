@@ -1,4 +1,4 @@
-import { Box, Steps as ChakraSteps } from "@chakra-ui/react";
+import { Steps as ChakraSteps, VStack } from "@chakra-ui/react";
 import * as React from "react";
 import { LuCheck } from "react-icons/lu";
 
@@ -9,40 +9,43 @@ interface StepInfoProps {
 
 export interface StepsItemProps
   extends Omit<ChakraSteps.ItemProps, "title">,
-    StepInfoProps {
-  completedIcon?: React.ReactNode;
-  icon?: React.ReactNode;
-}
+    StepInfoProps {}
 
 export const StepsItem = React.forwardRef<HTMLDivElement, StepsItemProps>(
   function StepsItem(props, ref) {
-    const { title, description, completedIcon, icon, ...rest } = props;
+    const { title, description, ...rest } = props;
     return (
-      <ChakraSteps.Item {...rest} ref={ref}>
-        <ChakraSteps.Trigger>
-          <ChakraSteps.Indicator>
-            <ChakraSteps.Status
-              complete={completedIcon || <LuCheck />}
-              incomplete={icon || <ChakraSteps.Number />}
-            />
-          </ChakraSteps.Indicator>
-        </ChakraSteps.Trigger>
-        <ChakraSteps.Separator />
+      <ChakraSteps.Item {...rest} ref={ref} flex="1 0 0 !important" gap="16px">
+        <ChakraSteps.Indicator
+          _complete={{ bg: "text.teal", color: "white" }}
+          _incomplete={{ bg: "transparent", color: "text.gray.dark" }}
+          _current={{
+            bg: "transparent",
+            border: "1px solid",
+            borderColor: "border.gray",
+          }}
+          color="white"
+        >
+          <ChakraSteps.Status
+            complete={<LuCheck strokeWidth="4px" />}
+            incomplete={null}
+          />
+        </ChakraSteps.Indicator>
         <StepInfo title={title} description={description} />
       </ChakraSteps.Item>
     );
   }
 );
 
-const StepInfo = (props: StepInfoProps) => {
+export const StepInfo = (props: StepInfoProps) => {
   const { title, description } = props;
 
   if (title && description) {
     return (
-      <Box>
+      <VStack gap="0">
         <ChakraSteps.Title>{title}</ChakraSteps.Title>
         <ChakraSteps.Description>{description}</ChakraSteps.Description>
-      </Box>
+      </VStack>
     );
   }
 

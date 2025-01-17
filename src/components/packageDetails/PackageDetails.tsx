@@ -1,7 +1,7 @@
 import { VStack } from "@chakra-ui/react";
-import React from "react";
 import MainData from "./MainData";
 import { ShipmentDetails } from "@/types/packageType";
+import TrackingDetails from "./TrackingDetails";
 
 interface PackageDetailsProps {
   data: ShipmentDetails;
@@ -10,8 +10,9 @@ interface PackageDetailsProps {
 const PackageDetails = ({ data }: PackageDetailsProps) => {
   if (!data) return null;
   return (
-    <VStack>
+    <VStack gap="24px">
       <MainData shipmentDetails={data} />
+      <TrackingDetails transitEvents={data.TransitEvents} />
     </VStack>
   );
 };
