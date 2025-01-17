@@ -29,7 +29,12 @@ const TrackingDetails = ({ transitEvents }: TrackingDetailsProps) => {
 
   const groupedEvents = groupByDay(transitEvents);
   return (
-    <VStack alignItems="start" w="full" gap="32px">
+    <VStack
+      alignItems="start"
+      w="full"
+      gap="32px"
+      px={{ base: "16px", md: "0" }}
+    >
       <Text color="text.gray.normal" LSDisplaySm fontWeight="medium">
         {t("tracking_details")}
       </Text>

@@ -15,7 +15,13 @@ export const StepsItem = React.forwardRef<HTMLDivElement, StepsItemProps>(
   function StepsItem(props, ref) {
     const { title, description, ...rest } = props;
     return (
-      <ChakraSteps.Item {...rest} ref={ref} flex="1 0 0 !important" gap="16px">
+      <ChakraSteps.Item
+        {...rest}
+        ref={ref}
+        flex="1 0 0 !important"
+        flexDirection={{ base: "row", md: "column" }}
+        gap="16px"
+      >
         <ChakraSteps.Indicator
           _complete={{ bg: "text.teal", color: "white" }}
           _incomplete={{ bg: "transparent", color: "text.gray.dark" }}
@@ -42,7 +48,7 @@ export const StepInfo = (props: StepInfoProps) => {
 
   if (title && description) {
     return (
-      <VStack gap="0">
+      <VStack gap="0" alignItems={{ base: "start", md: "center" }}>
         <ChakraSteps.Title>{title}</ChakraSteps.Title>
         <ChakraSteps.Description>{description}</ChakraSteps.Description>
       </VStack>

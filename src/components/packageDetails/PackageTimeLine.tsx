@@ -37,8 +37,12 @@ const PackageTimeLine = ({ shipmentDetails }: PackageTimeLineProps) => {
         count={steps.length}
         step={getStep(shipmentDetails.CurrentStatus.code)}
         size="sm"
+        orientation={{ base: "vertical", md: "horizontal" }}
       >
-        <StepsList alignItems="start !important">
+        <StepsList
+          alignItems="start !important"
+          gap={{ base: "24px", md: "0" }}
+        >
           {steps.map((step, index) => (
             <StepsItem
               index={index}

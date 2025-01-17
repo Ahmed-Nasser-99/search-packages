@@ -48,7 +48,7 @@ const MainData = ({ shipmentDetails }: MainDataProps) => {
           {t("your_order_is_expected_to_arrive_within_2_-3_working_days")}
         </Text>
       </VStack>
-      <HStack minW="80%" py="16px" h="128px" mx="auto">
+      <HStack minW="80%" py="16px" mx="auto">
         <PackageTimeLine shipmentDetails={shipmentDetails} />
       </HStack>
     </VStack>
