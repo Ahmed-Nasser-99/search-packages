@@ -70,4 +70,6 @@ export interface ShipmentDetails {
   deliveryCountryCode: string;
   canPayOnline: boolean;
   isOnlinePaymentFeatureEnabled: boolean;
+  error?: string;
+  status?: string;
 }

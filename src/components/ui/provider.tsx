@@ -1,7 +1,7 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { ColorModeProvider } from "./color-mode";
 import { ThemeProviderProps } from "next-themes";
-import { lightSystem } from "@/chakraTheme/chakraTheme";
+import { theme } from "@/chakraTheme/chakraTheme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export function Provider(props: ThemeProviderProps) {
@@ -9,7 +9,7 @@ export function Provider(props: ThemeProviderProps) {
   return (
     <ColorModeProvider {...props}>
       <QueryClientProvider client={queryClient}>
-        <ChakraProvider value={lightSystem}>{props.children}</ChakraProvider>
+        <ChakraProvider value={theme}>{props.children}</ChakraProvider>
       </QueryClientProvider>
     </ColorModeProvider>
   );

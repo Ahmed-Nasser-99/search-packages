@@ -1,4 +1,16 @@
 {
   "track_your_order": "Track your order",
-  "search": "Search"
+  "search": "Search",
+  "error": "No record of this tracking number can be found at this time, please check the number and try again later. For further assistance, please contact Customer Service.",
+  "search_package": "Search package",
+  "ORDER_#": "ORDER #",
+  "arriving_by": "Arriving by",
+  "your_order_is_expected_to_arrive_within_2_-3_working_days": "Your order is expected to arrive within 2 - 3 working days",
+  "picked_up": "Picked up",
+  "delivered": "Delivered",
+  "processing": "Processing",
+  "out_for_delivery": "Out for delivery",
+  "no_tracking_details": "No tracking details available",
+  "tracking_details": "Tracking Details",
+  "mobile_search": "All order updates will be available through this link."
 }

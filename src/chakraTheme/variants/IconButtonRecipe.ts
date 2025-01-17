@@ -8,6 +8,7 @@ const IconButtonRecipe = defineRecipe({
     p: "15px",
     cursor: "pointer",
     transition: "all 0.3s ease",
+    color: "white",
     _hover: {
       bg: "brand.hover",
     },
@@ -17,6 +18,23 @@ const IconButtonRecipe = defineRecipe({
     _disabled: {
       bg: "brand.disabled",
       cursor: "not-allowed",
+    },
+  },
+  variants: {
+    ghost: {
+      true: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "auto",
+        bg: "transparent",
+        p: 2,
+        _hover: {
+          bg: "#f4f4f5",
+        },
+        color: "text.gray.dark",
+        borderRadius: "0.25rem",
+      },
     },
   },
 });

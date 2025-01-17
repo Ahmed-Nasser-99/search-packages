@@ -46,5 +46,11 @@ export const textTheme = defineRecipe({
         lineHeight: "16px",
       },
     },
+    SSDisplayMd: {
+      true: {
+        fontSize: "20px",
+        lineHeight: "28px",
+      },
+    },
   },
 });

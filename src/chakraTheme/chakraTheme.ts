@@ -9,7 +9,7 @@ import { IconButtonRecipe } from "./variants/IconButtonRecipe";
 import { textTheme } from "./variants/TextTheme";
 
 // Dark theme configuration
-const lightTheme = defineConfig({
+const customTheme = defineConfig({
   theme: {
     tokens: {
       colors: {
@@ -57,7 +57,7 @@ const lightTheme = defineConfig({
 });
 
 // Create systems for each theme
-export const lightSystem = createSystem(defaultConfig, lightTheme);
+export const theme = createSystem(defaultConfig, customTheme);
 export const Input = chakra("input", InputRecipe);
 export const IconButton = chakra("button", IconButtonRecipe);
 export const Text = chakra("text", textTheme);

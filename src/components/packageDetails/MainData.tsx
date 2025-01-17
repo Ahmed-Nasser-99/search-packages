@@ -35,7 +35,7 @@ const MainData = ({ shipmentDetails }: MainDataProps) => {
         </Text>
         <HStack gap="0">
           <Text LSDisplayMd color="text.gray.dark" fontWeight="semibold">
-            {t("Arriving by")}
+            {t("arriving_by")}
           </Text>
           &nbsp;
           <Text LSDisplayMd color="text.teal" fontWeight="semibold">

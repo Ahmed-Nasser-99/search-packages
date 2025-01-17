@@ -1,8 +1,10 @@
-export const fetchPackageByTrackingNumber = async (
+import axios from "axios";
+
+export const fetchPackageByTrackingNumber = (
   trackingNumber: string,
   lang: string
 ) => {
-  const response = await fetch(
+  return axios.get(
     `https://tracking.bosta.co/shipments/track/${trackingNumber}?lang=${lang}`,
     {
       headers: {
@@ -10,5 +12,4 @@ export const fetchPackageByTrackingNumber = async (
       },
     }
   );
-  return response.json();
 };
